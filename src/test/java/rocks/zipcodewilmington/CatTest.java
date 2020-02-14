@@ -2,7 +2,9 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
 
@@ -42,7 +44,7 @@ public class CatTest {
 
     @Test
     public void setNameTest() {
-        Cat newCat = new Cat(null, null, null);
+        Cat newCat = new Cat("Zula", null, null);
         String givenName = "Zula";
 
         newCat.setName(givenName);
@@ -86,5 +88,29 @@ public class CatTest {
         Integer actual = newCat.getNumberOfMealsEaten();
 
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getIdTest() {
+        Cat newCat = new Cat(null, null, 52);
+
+        Integer expected = 52;
+        Integer actual = newCat.getId();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void checkAnimalInheritanceTest() {
+        Cat newCat = new Cat(null, null, null);
+
+        Assert.assertTrue(newCat instanceof Animal);
+    }
+
+    @Test
+    public void checkMammalInheritanceTest() {
+        Cat newCat = new Cat(null, null, null);
+
+        Assert.assertTrue(newCat instanceof Mammal);
     }
 }
