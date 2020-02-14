@@ -77,6 +77,14 @@ public class CatTest {
 
     @Test
     public void eatTest() {
-        
+        Cat newCat = new Cat(null, null, null);
+        Food banana = new Food();
+
+        newCat.eat(banana);
+
+        Integer expected = 1;
+        Integer actual = newCat.getNumberOfMealsEaten();
+
+        Assert.assertEquals(expected, actual);
     }
 }
