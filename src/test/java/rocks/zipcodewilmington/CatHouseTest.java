@@ -37,7 +37,7 @@ public class CatHouseTest {
         CatHouse.add(newCat);
         CatHouse.remove(newCat);
 
-        Assert.assertNotEquals(newCat, CatHouse.getCatById(5));
+        Assert.assertEquals(null, CatHouse.getCatById(5));
     }
 
     @Test
@@ -46,7 +46,7 @@ public class CatHouseTest {
         CatHouse.add(newCat);
         CatHouse.remove(5);
 
-        Assert.assertNotEquals(newCat, CatHouse.getCatById(5));
+        Assert.assertEquals(null, CatHouse.getCatById(5));
     }
 
     @Test

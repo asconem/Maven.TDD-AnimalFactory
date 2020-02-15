@@ -40,7 +40,7 @@ public class DogHouseTest {
         DogHouse.add(newDog);
         DogHouse.remove(newDog);
 
-        Assert.assertNotEquals(newDog, DogHouse.getDogById(5));
+        Assert.assertEquals(null, DogHouse.getDogById(5));
     }
 
     @Test
@@ -49,7 +49,7 @@ public class DogHouseTest {
         DogHouse.add(newDog);
         DogHouse.remove(5);
 
-        Assert.assertNotEquals(newDog, DogHouse.getDogById(5));
+        Assert.assertEquals(null, DogHouse.getDogById(5));
     }
 
     @Test
