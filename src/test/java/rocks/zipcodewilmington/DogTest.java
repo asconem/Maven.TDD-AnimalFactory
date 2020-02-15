@@ -2,8 +2,10 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.Dog;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
 
@@ -83,6 +85,30 @@ public class DogTest {
         Integer actual = newDog.getNumberOfMealsEaten();
 
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getIdTest() {
+        Dog newDog = new Dog(null, null, 18);
+
+        Integer expected = 18;
+        Integer actual = newDog.getId();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void checkAnimalInheritanceTest() {
+        Dog newDog = new Dog(null, null, null);
+
+        Assert.assertTrue(newDog instanceof Animal);
+    }
+
+    @Test
+    public void checkMammalInheritanceTest() {
+        Dog newDog = new Dog(null, null, null);
+
+        Assert.assertTrue(newDog instanceof Mammal);
     }
 
 
